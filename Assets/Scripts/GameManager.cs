@@ -14,6 +14,7 @@ public class GameManager : MonoBehaviour
         StartCoroutine(SpawnApples());
     }
 
+    // Coroutine to spawn apples
     IEnumerator SpawnApples() {
         while(isSpawnApple) {
             yield return new WaitForSeconds(spawnRate);

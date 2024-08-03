@@ -4,15 +4,17 @@ using UnityEngine;
 
 public class AppleTarget : MonoBehaviour
 {
-    // Vector3 applePosition;
+    // The values below were selected and tweaked during game mode
     private float xRange = 3.5f;
     private float ySpawnPosition = -2;
-    float speed = 12f;
-    public Rigidbody appleRb;
+    float speed = 12;
+
+    Rigidbody appleRb;
+
     // Start is called before the first frame update
     void Start()
     {
-        appleRb = GetComponent<Rigidbody>(); // get the rigidbody component on the apple without having to access it
+        appleRb = GetComponent<Rigidbody>(); // get the rigidbody component on the apple without having to access it publicly
 
         appleRb.AddForce(RandomForce(), ForceMode.Impulse);
         transform.position = RandomSpawnPosition();
